@@ -1,7 +1,24 @@
 const http = require('http');
-const dato = require('./dato.js');
+const fs = require('fs')
 
 var server = http.createServer(function(req,res){
-    res.writeHead(200, {'Content-Type' : 'text/html'});
-    res.end("<html><body>"+ dato.myDateTime()+"</body></html>");
+        fs.readFile('./counter.json',  (err, json) => {
+            if (err) {
+                console.log(err)
+                return
+                
+            }
+                var file = JSON.parse(json);
+            
+            res.writeHead(200, {'Content-Type' : 'application/json'});
+            res.write(JSON.stringify(file));
+        
+            fs.writeFile('./counter.json', (err, json )=>{
+
+                
+            })
+            
+            res.end();
+        
+});
 }).listen(8080);
