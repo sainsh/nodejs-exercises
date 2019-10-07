@@ -1,0 +1,11 @@
+{
+    "navn" : "thomas",
+    "hobbier" : ["rpg", "LARP", "gaming"],
+    "adresse" : {
+        "by" : "Horslunde",
+        "postnummer" : 4913,
+        "vej" : "hovedgaden",
+        "nummer" : 23
+    }
+
+}
